@@ -6,7 +6,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         int cs;
         while (loop) {
-            System.out.println("1. dodaj studenta\n2. wyświetl listę studentów\n3. wyszukaj studenta\n4. zakończ");
+            System.out.println("1. dodaj studenta\n2. wyświetl listę studentów\n3. wyszukaj studenta\n4. dodaj ocenę\n5. zakończ");
             if (scanner.hasNextLine()) {
                 try {
                     cs = -1;
@@ -23,6 +23,9 @@ public class Main {
                             StudentList.StudentSearch();
                             break;
                         case 4:
+                            Grades.gradeAdd();
+                            break;
+                        case 5:
                             loop = false;
                             break;
                         default:
