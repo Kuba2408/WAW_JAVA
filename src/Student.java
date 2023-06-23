@@ -10,13 +10,17 @@ public class Student {
     private String surname;
     private String group;
 
-    public Student() {
+    public static void StudentAdd() {
         Scanner sc = new Scanner(System.in);
+         int index;
+         String name;
+         String surname;
+         String group;
 
         while(true) {
             try {
                 System.out.println("Podaj numer indeksu");
-                this.index = Integer.parseInt(sc.nextLine().trim());
+                index = Integer.parseInt(sc.nextLine().trim());
                 break;
             } catch (Exception e) {
                 System.out.println(e);
@@ -25,7 +29,7 @@ public class Student {
         while(true) {
             try {
                 System.out.println("Podaj imię");
-                this.name = sc.nextLine().trim();
+                name = sc.nextLine().trim();
                 break;
             } catch (Exception e) {
                 System.out.println(e);
@@ -34,7 +38,7 @@ public class Student {
         while(true) {
             try {
                 System.out.println("Podaj nazwisko");
-                this.surname = sc.nextLine().trim();
+                surname = sc.nextLine().trim();
                 break;
             } catch (Exception e) {
                 System.out.println(e);
@@ -43,7 +47,7 @@ public class Student {
         while(true) {
             try {
                 System.out.println("Podaj grupę");
-                this.group = sc.nextLine().trim();
+                group = sc.nextLine().trim();
                 break;
             } catch (Exception e) {
                 System.out.println(e);
@@ -53,11 +57,12 @@ public class Student {
             BufferedWriter writer = new BufferedWriter(new FileWriter("src/Student.txt", true));
             writer.append(index + ";" + name + ";" + surname + ";" + group + "\n");
             System.out.println("Zapisano Studenta");
+            sc.close();
             writer.close();
         } catch (Exception e){
             System.out.println(e);
         }
-        sc.close();
+
     }
 
 
