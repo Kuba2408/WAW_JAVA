@@ -7,7 +7,6 @@ import java.util.Scanner;
 
 public class Grades extends Student {
     public static void gradeAdd(Scanner sc2){//the method of adding a grade for a student
-        List<Student> studentList = new ArrayList<>();//list for data from the student's txt file
         try {
             FileInputStream fis = new FileInputStream("src/Student.txt");//read file Student.txt
             Scanner sc = new Scanner(fis);
@@ -54,7 +53,7 @@ public class Grades extends Student {
         }
     }
     public static void studentGrade(Scanner sc2){//method to search grades for student
-        List<Student> studentList = new ArrayList<>();
+
         try {
             FileInputStream fis = new FileInputStream("src/StudentGrade.txt");//read file Student.txt
             Scanner sc = new Scanner(fis);

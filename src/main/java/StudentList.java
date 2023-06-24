@@ -5,8 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class StudentList {
-    public static List<Student> StudentsImport() {//method to print list of students
-        List<Student> studentList = new ArrayList<>();//list for data from the student's txt file
+    public static void StudentsImport() {//method to print list of students
         try {
 
             FileInputStream fis = new FileInputStream("src/Student.txt");//read file Student.txt
@@ -32,11 +31,9 @@ public class StudentList {
         } catch (FileNotFoundException e) {
             System.out.println("File not found -> " + e);
         }
-        return studentList;
     }
 
     public static void StudentSearch(Scanner sc2) {//method to search student
-        List<Student> studentList = new ArrayList<>();//list for data from the student's txt file
         try {
             FileInputStream fis = new FileInputStream("src/Student.txt");//read file Student.txt
             Scanner sc = new Scanner(fis);
@@ -50,11 +47,20 @@ public class StudentList {
             String c;
             int index;
             boolean loop = true;
+            int target = 0;
             do {
                 System.out.println("1. wyszukiwanie po indeksie\n2. wyszukiwanie po imieniu\n3. wyszukiwanie po nazwisku\n4. wyszukiwanie po grupie");
                 //selection of the var by which the student will be searched
-                switch (sc2.nextLine()) {
-                    case "1":
+                while(true) {
+                    try {
+                        target = Integer.parseInt(sc2.nextLine().trim());
+                        break;
+                    }catch (Exception e){}
+                }
+
+
+                switch (target) {
+                    case 1:
                         System.out.println("Podaj szukane: ");
                         b = Integer.parseInt(sc2.nextLine().trim());//the user enters the search value
                         //loop reading the file line by line
@@ -71,7 +77,7 @@ public class StudentList {
                         }
                         loop = false;
                         break;
-                    case "2":
+                    case 2:
                         System.out.println("Podaj szukane: ");
                         c = sc2.nextLine().trim();//the user enters the search value
                         //loop reading the file line by line
@@ -89,7 +95,7 @@ public class StudentList {
                         loop = false;
                         break;
 
-                    case "3":
+                    case 3:
                         System.out.println("Podaj szukane: ");
                         c = sc2.nextLine().trim();//the user enters the search value
                         //loop reading the file line by line
@@ -107,7 +113,7 @@ public class StudentList {
                         loop = false;
                         break;
 
-                    case "4":
+                    case 4:
                         System.out.println("Podaj szukane: ");
                         c = sc2.nextLine().trim();//the user enters the search value
                         //loop reading the file line by line
