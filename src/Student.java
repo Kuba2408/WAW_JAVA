@@ -10,8 +10,7 @@ public class Student {
     private String surname;
     private String group;
 
-    public static void StudentAdd() {
-        Scanner sc = new Scanner(System.in);
+    public static void StudentAdd(Scanner sc) {
          int index;
          String name;
          String surname;
@@ -22,7 +21,7 @@ public class Student {
                 System.out.println("Podaj numer indeksu");
                 index = Integer.parseInt(sc.nextLine().trim());
                 break;
-            } catch (Exception e) {
+            } catch (NumberFormatException e) {
                 System.out.println(e);
             }
         }
@@ -57,7 +56,6 @@ public class Student {
             BufferedWriter writer = new BufferedWriter(new FileWriter("src/Student.txt", true));
             writer.append(index + ";" + name + ";" + surname + ";" + group + "\n");
             System.out.println("Zapisano Studenta");
-            sc.close();
             writer.close();
         } catch (Exception e){
             System.out.println(e);

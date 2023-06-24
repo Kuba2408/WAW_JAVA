@@ -6,12 +6,12 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Grades extends Student {
-    public static void gradeAdd(){
+    public static void gradeAdd(Scanner sc2){
         List<Student> studentList = new ArrayList<>();
         try {
             FileInputStream fis = new FileInputStream("src/Student.txt");
             Scanner sc = new Scanner(fis);
-            Scanner sc2 = new Scanner(System.in);
+            sc2 = new Scanner(System.in);
             String l;
             String[] a;
             String name;
@@ -48,18 +48,17 @@ public class Grades extends Student {
                         }
 
             sc.close();
-            sc2.close();
 
         } catch (Exception e) {
             System.out.println("Error -> " + e);
         }
     }
-    public static void studentGrade(){
+    public static void studentGrade(Scanner sc2){
         List<Student> studentList = new ArrayList<>();
         try {
             FileInputStream fis = new FileInputStream("src/StudentGrade.txt");
             Scanner sc = new Scanner(fis);
-            Scanner sc2 = new Scanner(System.in);
+            sc2 = new Scanner(System.in);
             String l;
             String[] a;
             String name;
@@ -85,7 +84,6 @@ public class Grades extends Student {
                             }
                         }
             sc.close();
-            sc2.close();
 
         } catch (Exception e) {
             System.out.println("Error -> " + e);

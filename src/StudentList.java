@@ -33,12 +33,12 @@ public class StudentList {
         return studentList;
     }
 
-    public static void StudentSearch() {
+    public static void StudentSearch(Scanner sc2) {
         List<Student> studentList = new ArrayList<>();
         try {
             FileInputStream fis = new FileInputStream("src/Student.txt");
             Scanner sc = new Scanner(fis);
-            Scanner sc2 = new Scanner(System.in);
+            sc2 = new Scanner(System.in);
             String l;
             String[] a;
             String name;
@@ -124,7 +124,6 @@ public class StudentList {
 
             } while (loop);
             sc.close();
-            sc2.close();
 
         } catch (Exception e) {
             System.out.println("Error -> " + e);
