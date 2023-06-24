@@ -21,7 +21,6 @@ public class Grades extends Student {
             int grade;
             String sb;
             int index;
-            boolean loop = true;
                 System.out.println("Wpisz numer indeksu: ");
                         b = Integer.parseInt(sc2.nextLine().trim());
                         while (sc.hasNext()) {
@@ -48,6 +47,43 @@ public class Grades extends Student {
                             }
                         }
 
+            sc.close();
+            sc2.close();
+
+        } catch (Exception e) {
+            System.out.println("Error -> " + e);
+        }
+    }
+    public static void studentGrade(){
+        List<Student> studentList = new ArrayList<>();
+        try {
+            FileInputStream fis = new FileInputStream("src/StudentGrade.txt");
+            Scanner sc = new Scanner(fis);
+            Scanner sc2 = new Scanner(System.in);
+            String l;
+            String[] a;
+            String name;
+            String surname;
+            String group;
+            String sb;
+            int b;
+            int index, grade;
+                System.out.println("Podaj numer indeksu: ");
+                        b = Integer.parseInt(sc2.nextLine().trim());
+                        while (sc.hasNext()) {
+                            l = sc.nextLine().trim();
+                            a = l.split(";");
+                            index = Integer.parseInt(a[0].trim());
+                            name = a[1].trim();
+                            surname = a[2].trim();
+                            group = a[3].trim();
+                            sb = a[4].trim();
+                            grade = Integer.parseInt(a[5].trim());
+
+                            if (index == b) {
+                                System.out.println("indeks: " + a[0] + "  imię: " + name + " nazwisko: " + surname + " grupa: " + group + " przedmiot: " + sb + " ocena: " + grade);
+                            }
+                        }
             sc.close();
             sc2.close();
 
