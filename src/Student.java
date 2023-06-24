@@ -5,17 +5,17 @@ import java.io.FileWriter;
 import java.util.Scanner;
 
 public class Student {
-    private int index;
-    private String name;
-    private String surname;
-    private String group;
+    private int index; //student index
+    private String name; //student name
+    private String surname; //student surname
+    private String group; //student group
 
     public static void StudentAdd(Scanner sc) {
-         int index;
-         String name;
-         String surname;
-         String group;
-
+         int index; //var student index in method
+         String name; //var student name in method
+         String surname; //var student surname in method
+         String group; //var student group in method
+        //a loop that runs until the input index is correct
         while(true) {
             try {
                 System.out.println("Podaj numer indeksu");
@@ -25,6 +25,7 @@ public class Student {
                 System.out.println(e);
             }
         }
+        //a loop that runs until the input name is correct
         while(true) {
             try {
                 System.out.println("Podaj imię");
@@ -34,6 +35,7 @@ public class Student {
                 System.out.println(e);
             }
         }
+        //a loop that runs until the input surname is correct
         while(true) {
             try {
                 System.out.println("Podaj nazwisko");
@@ -43,6 +45,7 @@ public class Student {
                 System.out.println(e);
             }
         }
+        //a loop that runs until the input student group is correct
         while(true) {
             try {
                 System.out.println("Podaj grupę");
@@ -52,6 +55,7 @@ public class Student {
                 System.out.println(e);
             }
         }
+        //saving student data to a file
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter("src/Student.txt", true));
             writer.append(index + ";" + name + ";" + surname + ";" + group + "\n");
